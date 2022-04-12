@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Characters from "./pages/Characters";
+import Character from "./pages/Character";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Master graphQL and apollo client and react</h1>
+      <Routes>
+        <Route exact path="/" element={<Characters />} />
+        <Route path="/:id" element={<Character />} />
+      </Routes>
     </div>
   );
 }
